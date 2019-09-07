@@ -1,0 +1,4 @@
+echo -n "(a) "
+ifconfig | grep broadcast | cut -d ' ' -f 5,6
+echo "(b) IP adresses which are part of the same subnet:"
+arp -a | awk '{print $2}' | sed 's/[()]//g' 

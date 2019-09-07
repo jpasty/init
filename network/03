@@ -1,0 +1,1 @@
+networksetup -listallhardwareports | grep -i wi-fi -A2 | grep -Eo ..\(\:..\){5}
