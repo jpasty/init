@@ -1,0 +1,5 @@
+#!/bin/bash
+
+printf "%s%8s%17s%8s\n" N Login UID Path
+cat /etc/passwd | cut -d ':' -f 1,3,6 \
+| sed 's/:/\t/g | nl -n ln | column -t
