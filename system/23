@@ -1,0 +1,2 @@
+1) For connecting as a new user with graphoc session you need to select "SwitchUser" in menu pannel.
+2) To connect via ssh just enter next command:  ssh new_user_name@host_ip. Where new_user_name is a host (or domain) name. 
