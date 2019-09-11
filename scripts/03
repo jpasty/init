@@ -1,0 +1,17 @@
+#!/bin/bash
+
+echo "Which User you want to del?"
+read USR
+if [[ $USR != $(cat /etc/passwd | grep -w $USR | cut -d : -f 1) ]]
+then
+echo "User doesn't exist"
+else
+passwd -l $USR
+sudo usermod --expiredate 1 rt
+	if [[ $(pgrep -u $USR) ]]
+	then
+	pgrep -u $USR | xargs  kill -9
+	fi
+sudo userdel -rf $USR
+echo "Deleting comlete!"
+fi
